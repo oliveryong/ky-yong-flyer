@@ -1,11 +1,11 @@
 <template>
   <div>
-    <UButton>Test</UButton>
+    <h1>FORM & TEMPLATE WILL BE HERE</h1>
   </div>
 </template>
 
 <script setup>
-onMounted(() => {
-  console.log("test");
+definePageMeta({
+  layout: "default",
 });
 </script>

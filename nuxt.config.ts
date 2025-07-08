@@ -3,7 +3,13 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
-
+  app: {
+    head: {
+      title: "K.Y & Yong CO",
+      titleTemplate: "%s - Flyer",
+      meta: [{ name: "description", content: "K.Y & Yong CO" }],
+    },
+  },
   modules: [
     "@nuxt/eslint",
     "@nuxt/fonts",
