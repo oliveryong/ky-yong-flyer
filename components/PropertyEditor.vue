@@ -9,6 +9,7 @@
         <p class="text-sm font-light text-gray-500 italic dark:text-gray-400">
           Core details of the property, including its location, price, and size.
         </p>
+
         <UFormField label="Property Name">
           <UInput v-model="propertyData.name" placeholder="Real Estate XYZ" class="w-full" />
         </UFormField>
@@ -32,7 +33,6 @@
           </UFormField>
         </div>
         <hr class="border-gray-300 dark:border-gray-700" />
-
         <p class="flex items-center gap-2 font-medium">
           <UIcon name="i-heroicons-photo" class="h-6 w-6" />
           Property Media
@@ -77,7 +77,6 @@
           </div>
         </UFormField>
         <hr class="border-gray-300 dark:border-gray-700" />
-
         <p class="flex items-center gap-2 font-medium">
           <UIcon name="i-heroicons-home" class="h-6 w-6" />
           Room Specs
@@ -102,7 +101,6 @@
           </UFormField>
         </div>
         <hr class="border-gray-300 dark:border-gray-700" />
-
         <p class="flex items-center gap-2 font-medium">
           <UIcon name="i-heroicons-user-circle" class="h-6 w-6" />
           Agent Info
@@ -139,30 +137,8 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
-
-const propertyData = reactive({
-  name: '',
-  address: '',
-  price: '',
-  type: 'condominium',
-  internalarea: 0,
-  externalarea: 0,
-  imageOne: null,
-  imageTwo: null,
-  imageThree: null,
-  bedroom: 0,
-  bathroom: 0,
-  kitchen: 0,
-  carspace: 0,
-})
-
-const agentData = reactive({
-  name: '',
-  email: '',
-  phone: '',
-  company: '',
-})
+const propertyData = defineModel('propertyData', { type: Object })
+const agentData = defineModel('agentData', { type: Object })
 
 const propertyTypeOptions = ref([
   { label: 'Condominium', value: 'condominium' },

@@ -78,20 +78,8 @@
 </template>
 
 <script setup>
-import { reactive, ref, computed } from 'vue'
-
-const fontData = reactive({
-  family: 'font-sans',
-  weight: 400,
-  lineHeight: 1.5,
-  size: 14,
-})
-
-const colorData = reactive({
-  primary: '#000000',
-  background: '#000000',
-  text: '#ffffff',
-})
+const colorData = defineModel('colorData', { type: Object })
+const fontData = defineModel('fontData', { type: Object })
 
 const colorOptions = ref([
   '#FFFFFF',
@@ -122,11 +110,11 @@ const fontFamilyOptions = ref([
   { label: 'Font Serif', value: 'font-serif' },
 ])
 
-const primaryChip = computed(() => ({ backgroundColor: colorData.primary }))
-const backgroundChip = computed(() => ({ backgroundColor: colorData.background }))
-const textChip = computed(() => ({ backgroundColor: colorData.text }))
+const primaryChip = computed(() => ({ backgroundColor: colorData.value.primary }))
+const backgroundChip = computed(() => ({ backgroundColor: colorData.value.background }))
+const textChip = computed(() => ({ backgroundColor: colorData.value.text }))
 
 const setColor = (color) => {
-  colorData.primary = color
+  colorData.value.primary = color
 }
 </script>
