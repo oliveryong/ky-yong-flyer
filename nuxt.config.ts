@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@nuxt/ui",
+    "@vueuse/nuxt",
   ],
   css: ["~/assets/css/main.css"],
   vite: {
