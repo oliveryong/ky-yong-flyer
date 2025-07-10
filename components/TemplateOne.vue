@@ -1,7 +1,7 @@
 <template>
   <div :class="[fontProps.family, 'flex w-3xl flex-col overflow-hidden shadow-lg']" :style="flyerStyles">
     <div v-if="propertyProps.imageOne" class="relative">
-      <NuxtImg :src="propertyProps.imageOne" alt="Main property image" class="h-80 w-full object-cover" />
+      <img :src="propertyProps.imageOne" alt="Main property image" class="h-80 w-full object-cover" />
       <div
         v-if="propertyProps.price"
         class="absolute right-0 bottom-0 m-3 rounded-md px-6 py-3"
