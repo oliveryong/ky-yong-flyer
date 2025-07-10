@@ -67,7 +67,12 @@
           <UIcon name="i-lucide-car-front" class="h-6 w-6 opacity-60" />
           <span class="font-medium">{{ propertyProps.carspace || '0' }} Car Spaces</span>
         </div>
+        <div class="flex items-center gap-3 text-gray-700">
+          <UIcon name="i-lucide-cooking-pot" class="h-6 w-6 opacity-60" />
+          <span class="font-medium">{{ propertyProps.kitchen || '0' }} Car Spaces</span>
+        </div>
         <div class="mt-6 space-y-2 border-t border-gray-200 pt-4 text-sm" :style="{ color: colorProps.background }">
+          <p><strong>Type:</strong> {{ propertyProps.type || 'N/A' }}</p>
           <p><strong>Internal Area:</strong> {{ propertyProps.internalarea || 'N/A' }}</p>
           <p><strong>External Area:</strong> {{ propertyProps.externalarea || 'N/A' }}</p>
         </div>

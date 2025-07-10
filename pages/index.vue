@@ -30,6 +30,14 @@
         :agent-props="agentObj"
         :color-props="colorObj"
       />
+      <TemplateFour
+        v-if="selectedTemplate == 4"
+        id="template_id"
+        :property-props="propertyObj"
+        :font-props="fontObj"
+        :agent-props="agentObj"
+        :color-props="colorObj"
+      />
     </div>
     <ThemeEditor v-model:color-data="colorObj" v-model:font-data="fontObj" v-model:template-data="selectedTemplate" />
   </div>
