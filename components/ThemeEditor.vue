@@ -10,6 +10,10 @@
           <UButton label="Template 1" icon="i-heroicons-bolt" variant="soft" @click="setTemplate(1)" />
           <UButton label="Template 2" icon="i-heroicons-globe-alt" variant="soft" @click="setTemplate(2)" />
         </div>
+        <div class="grid grid-cols-2 gap-4">
+          <UButton label="Template 3" icon="i-heroicons-beaker" variant="soft" @click="setTemplate(3)" />
+          <UButton label="Template 4" icon="i-heroicons-lifebuoy" variant="soft" @click="setTemplate(4)" />
+        </div>
         <hr class="border-gray-300 dark:border-gray-700" />
         <p class="flex items-center gap-2 font-medium">
           <UIcon name="i-heroicons-pencil" class="h-6 w-6" />

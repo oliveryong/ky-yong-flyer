@@ -14,6 +14,22 @@
         :agent-props="agentObj"
         :color-props="colorObj"
       />
+      <TemplateTwo
+        v-if="selectedTemplate == 2"
+        id="template_id"
+        :property-props="propertyObj"
+        :font-props="fontObj"
+        :agent-props="agentObj"
+        :color-props="colorObj"
+      />
+      <TemplateThree
+        v-if="selectedTemplate == 3"
+        id="template_id"
+        :property-props="propertyObj"
+        :font-props="fontObj"
+        :agent-props="agentObj"
+        :color-props="colorObj"
+      />
     </div>
     <ThemeEditor v-model:color-data="colorObj" v-model:font-data="fontObj" v-model:template-data="selectedTemplate" />
   </div>
@@ -25,7 +41,7 @@ definePageMeta({
   layout: 'default',
 })
 
-const selectedTemplate = ref(1)
+const selectedTemplate = ref(3)
 
 const propertyObj = reactive({
   name: '',

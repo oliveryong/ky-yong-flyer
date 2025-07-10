@@ -198,12 +198,12 @@ const handleReset = () => {
 }
 
 const propertyTypeOptions = ref([
-  { label: 'Condominium', value: 'condominium' },
-  { label: 'Apartment', value: 'apartment' },
-  { label: 'Bungalow', value: 'bungalow' },
-  { label: 'Terrace House', value: 'terrace' },
-  { label: 'Semi Detached House', value: 'semidetached' },
-  { label: 'Townhouse', value: 'townhouse' },
-  { label: 'Shoplot', value: 'shoplot' },
+  { label: 'Condominium', value: 'Condominium' },
+  { label: 'Apartment', value: 'Apartment' },
+  { label: 'Bungalow', value: 'Bungalow' },
+  { label: 'Terrace House', value: 'Terrace' },
+  { label: 'Semi Detached House', value: 'Semi Detached' },
+  { label: 'Townhouse', value: 'Townhouse' },
+  { label: 'Shoplot', value: 'Shoplot' },
 ])
 </script>
