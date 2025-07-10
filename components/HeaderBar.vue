@@ -1,6 +1,6 @@
 <template>
   <header
-    class="sticky top-0 z-50 flex w-full items-center justify-between border-b border-gray-200 bg-gray-100 p-4 px-6 py-2 dark:border-gray-700 dark:bg-gray-800"
+    class="flex w-full items-center justify-between border-b border-gray-200 bg-gray-100 px-6 py-2 dark:border-gray-700 dark:bg-gray-800"
   >
     <div class="font-bold text-blue-500 dark:text-blue-200">
       <span>K.Y & Yong CO</span>

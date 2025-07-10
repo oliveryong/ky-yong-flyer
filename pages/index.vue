@@ -1,15 +1,16 @@
 <template>
-  <div class="flex w-full justify-between">
+  <div class="flex justify-between">
     <PropertyEditor v-model:property-data="propertyObj" v-model:agent-data="agentObj" />
     <div class="flex-1 p-6">
       <TemplateOne
+        v-if="selectedTemplate == 1"
         :property-props="propertyObj"
         :font-props="fontObj"
         :agent-props="agentObj"
         :color-props="colorObj"
       />
     </div>
-    <ThemeEditor v-model:color-data="colorObj" v-model:font-data="fontObj" />
+    <ThemeEditor v-model:color-data="colorObj" v-model:font-data="fontObj" v-model:template-data="selectedTemplate" />
   </div>
 </template>
 
@@ -18,20 +19,22 @@ definePageMeta({
   layout: 'default',
 })
 
+const selectedTemplate = ref(1)
+
 const propertyObj = reactive({
   name: '',
   address: '',
   price: '',
-  type: 'condominium',
-  internalarea: 0,
-  externalarea: 0,
+  type: '',
+  internalarea: null,
+  externalarea: null,
   imageOne: null,
   imageTwo: null,
   imageThree: null,
-  bedroom: 0,
-  bathroom: 0,
-  kitchen: 0,
-  carspace: 0,
+  bedroom: null,
+  bathroom: null,
+  kitchen: null,
+  carspace: null,
 })
 
 const agentObj = reactive({
@@ -49,8 +52,8 @@ const fontObj = reactive({
 })
 
 const colorObj = reactive({
-  primary: '#000000',
-  background: '#000000',
+  primary: '#C3C3C3',
+  background: '#636363',
   text: '#ffffff',
 })
 </script>
