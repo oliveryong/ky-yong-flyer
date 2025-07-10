@@ -203,7 +203,6 @@ const propertyTypeOptions = ref([
   { label: 'Bungalow', value: 'Bungalow' },
   { label: 'Terrace House', value: 'Terrace' },
   { label: 'Semi Detached House', value: 'Semi Detached' },
-  { label: 'Townhouse', value: 'Townhouse' },
   { label: 'Shoplot', value: 'Shoplot' },
 ])
 </script>
