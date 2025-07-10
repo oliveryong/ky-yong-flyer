@@ -138,7 +138,7 @@
         @click="toggleTheme"
       />
       <UButton label="Reset" size="lg" color="error" variant="outline" @click="handleReset" />
-      <UButton label="Download" size="lg" variant="solid" />
+      <UButton label="Download" size="lg" variant="solid" disabled @click="handleGeneratePdf" />
     </div>
   </div>
 </template>
@@ -146,12 +146,17 @@
 <script setup>
 const propertyData = defineModel('propertyData', { type: Object })
 const agentData = defineModel('agentData', { type: Object })
+const emits = defineEmits(['onGeneratePDF'])
 
 const colorMode = useColorMode()
 const themeButton = computed(() => ({
   label: colorMode.value === 'dark' ? 'Dark Mode' : 'Light Mode',
   icon: colorMode.value === 'dark' ? 'i-heroicons-moon' : 'i-heroicons-sun',
 }))
+
+const handleGeneratePdf = () => {
+  emits('onGeneratePDF')
+}
 
 const toggleTheme = () => {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'

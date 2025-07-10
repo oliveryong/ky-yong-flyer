@@ -1,9 +1,14 @@
 <template>
   <div class="flex justify-between">
-    <PropertyEditor v-model:property-data="propertyObj" v-model:agent-data="agentObj" />
+    <PropertyEditor
+      v-model:property-data="propertyObj"
+      v-model:agent-data="agentObj"
+      @on-generate-p-d-f="handleGeneratePreviewIntoPdf"
+    />
     <div class="flex-1 p-6">
       <TemplateOne
         v-if="selectedTemplate == 1"
+        id="template_id"
         :property-props="propertyObj"
         :font-props="fontObj"
         :agent-props="agentObj"
@@ -15,6 +20,7 @@
 </template>
 
 <script setup>
+import html2canvas from 'html2canvas-pro'
 definePageMeta({
   layout: 'default',
 })
@@ -56,4 +62,25 @@ const colorObj = reactive({
   background: '#636363',
   text: '#ffffff',
 })
+
+const handleGeneratePreviewIntoPdf = async () => {
+  const captureArea = document.getElementById('template_id')
+  try {
+    // 3. Use html2canvas to render the element.
+    const canvas = await html2canvas(captureArea, {
+      useCORS: true, // Important for images from other domains
+      scale: 2, // Increase scale for better quality
+    })
+
+    // 4. Create a temporary link to trigger the download.
+    const link = document.createElement('a')
+    link.download = 'flyer-capture.png'
+    link.href = canvas.toDataURL('image/png')
+    link.click()
+
+    console.log('Image download initiated.')
+  } catch (error) {
+    console.error('Oops, something went wrong!', error)
+  }
+}
 </script>
